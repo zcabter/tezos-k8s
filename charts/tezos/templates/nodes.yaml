@@ -85,9 +85,9 @@ spec:
         {{- if $.node_vals.storageClassName }}
         storageClassName: {{ $.node_vals.storageClassName }}
         {{- end }}
-{{- if $.node_vals.dataSource  }}
+{{- if $.node_vals.data_source  }}
         dataSource:
-          name: {{ $.node_vals.dataSource }}
+          name: {{ $.node_vals.data_source }}
           kind: VolumeSnapshot
           apiGroup: snapshot.storage.k8s.io
 {{- end }}

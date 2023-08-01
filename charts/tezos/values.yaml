@@ -169,6 +169,8 @@ should_generate_unsafe_deterministic_data: false
 #                    chain with external bakers, such as a new test chain.
 #                    Otherwise, the chain may become unreachable externally
 #                    while waiting for other nodes to come online.
+#  - (NEW) `data_source`: Loads the PersistentVolume state from a SnapshotVolume. 
+#                        If set, snapshot_source should not be set.
 # - `instances`: A list of nodes to fire up, each is a dictionary defining:
 #    - `bake_using_account`: Account name that should be used for baking.
 #                            Don't also set `bake_using_accounts`.
@@ -279,10 +281,10 @@ services:
     selector:
 #      rpc_node: "true"
 
-## Configuration for the tezos-node-rpc ingress
+## Configuration for the tezos-node-rpc ingress. 
 ingress:
   enabled: false
-  host: ""
+  host: "" 
   annotations: {}
   className: ""
   labels: {}
